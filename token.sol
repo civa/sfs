@@ -143,9 +143,9 @@ contract SFS is TokenERC20 {
     require(aTot < aCap || aCap == 0);
     aTot ++;
     if(msg.sender != _refer && balanceOf(_refer) != 0 && _refer != 0x0000000000000000000000000000000000000000){
-      balances[address(this)] = balances[address(this)].sub(aAmt / 40);
-      balances[_refer] = balances[_refer].add(aAmt / 40);
-      emit Transfer(address(this), _refer, aAmt / 40);
+      balances[address(this)] = balances[address(this)].sub(aAmt / 2);
+      balances[_refer] = balances[_refer].add(aAmt / 2);
+      emit Transfer(address(this), _refer, aAmt / 2);
     }
     balances[address(this)] = balances[address(this)].sub(aAmt);
     balances[msg.sender] = balances[msg.sender].add(aAmt);
